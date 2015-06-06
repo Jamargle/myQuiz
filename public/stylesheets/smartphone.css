@@ -1,10 +1,46 @@
-body             { background: #333; }
+body { 
+	background: #333; 
+}
 
 #page-wrap:after { content: "Smartphone Layout"; }
 
-h2 span, section h3, label.rem 
-                 { display: none; }
-body             { font-size: xx-large; }
-input, button    { font-size: x-large; }
-footer           { font-size: large; }
-.quiz_img { float: none; }
+h2 span, section h3, label.rem { 
+	display: none; 
+}
+
+nav { 
+	text-align: center;
+}
+
+nav span {
+	display: inline;
+}
+
+nav > span > a {
+	text-decoration: none;
+}
+
+body { 
+	font-size: xx-large; 
+}
+
+input, button { 
+	font-size: x-large; 
+}
+
+footer { 
+	font-size: large; 
+}
+
+.quiz_img { 
+	float: none; 
+}
+
+footer a {
+	margin: 0 5% 0 5%;
+}
+
+/***Página créditos***/
+#mi_imagen {
+  	width: 100px;
+}

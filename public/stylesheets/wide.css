@@ -1,8 +1,44 @@
-body { background: #999; }
+body { 
+	background: #2196f3;
+	margin: 0 10% 0 10%;
+}
 
-#page-wrap:after { content: "Wide Layout"; }
+#page-wrap:after { 
+	content: "Wide Layout"; 
+}
 
-nav       { float: left; width: 15%; height: 200px ;}
-nav span  { margin: 0px 100px 0px 0px;}
-section   { float: right; width: 80%; height: 200px ;}
-footer    { clear: both;  display: block; }
+nav { 
+	text-align: center;
+	float: left; 
+	width: 15%; 
+	height: 200px;
+}
+
+nav span  { 
+	margin: 20px 0px 0px 0px;
+}
+
+section   { 
+	float: right; 
+	width: 80%;
+	height: 200px;
+}
+
+#page-wrap #s1 h3, p, form { 
+	text-align: left;
+	padding-top: 50px;
+}
+
+footer { 
+	clear: both;
+	display: block;
+}
+
+footer a {
+	margin: 10% 15% 10% 15%;
+}
+
+/***Página créditos***/
+#mi_imagen {
+	width: 100px;
+}
