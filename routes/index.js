@@ -9,6 +9,8 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'MyQuiz' });
 });
 
+//Ruta para cargar con el id de pregunta
+router.param('quizId', quizController.load);
 
 // Definición de rutas de /quizes
 router.get('/quizes',                      quizController.index);
