@@ -16,9 +16,21 @@ exports.load = function(req, res, next, quizId) {
 
 //GET /quizes
 exports.index = function(req, res) {
-	models.Quiz.findAll().then(function(quizes) {
+	/*models.Quiz.findAll().then(function(quizes) {
 		res.render('quizes/index', {quizes: quizes});
-	}).catch(function(error) {next(error);})
+	}).catch(function(error) {next(error);})*/
+	var m;
+	if (req.query.search) {
+		m = req.query.search.replace(' ','%');
+	}
+	models.Quiz.findAll({
+		where: {
+			pregunta: { $like: '%' + m +'%' }
+		}
+	}).then(function(quizes) {
+		res.render('quizes/index', {quizes: quizes});
+	}).catch(function(error) {
+		next(error);});
 };
 
 
