@@ -21,19 +21,31 @@ exports.load = function(req, res, next, quizId) {
 exports.index = function(req, res) {
 	//Si no hay búsqueda se asigna vacío
 	var search = req.query.search || "";
-
-  var tema = (req.query.filtro_tema === 'ninguno')?"%":req.query.filtro_tema;
 	//Se modifica el string para que tenga los comodines %
 	search = '%' + search.replace(" ","%") + '%';
 
-	models.Quiz.findAll({
-		where: ['pregunta like ? AND tema = ?', search, tema],
-		order: 'pregunta'
-	}).then(function(quizes) {
-		res.render('quizes/index', {quizes: quizes, errors: []});
-	}).catch(function(error) {
-		next(error);
-	});
+  //Si no se selecciona tema, se muestran todas las preguntas
+  if (req.query.filtro_tema === 'ninguno') {
+    models.Quiz.findAll({
+      where: ['pregunta like ?', search],
+      order: 'pregunta'
+    }).then(function(quizes) {
+      res.render('quizes/index', {quizes: quizes, errors: []});
+    }).catch(function(error) {
+      next(error);
+    });
+  }else{
+    models.Quiz.findAll({
+      where: ['pregunta like ? AND tema = ?', search, req.query.filtro_tema],
+      order: 'pregunta'
+    }).then(function(quizes) {
+      res.render('quizes/index', {quizes: quizes, errors: []});
+    }).catch(function(error) {
+      next(error);
+    });
+  }
+
+	
 
 };
 
