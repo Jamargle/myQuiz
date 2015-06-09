@@ -21,7 +21,8 @@ exports.load = function(req, res, next, quizId) {
 exports.index = function(req, res) {
 	//Si no hay búsqueda se asigna vacío
 	var search = req.query.search || "";
-  var tema = req.query.filtro_tema || "";
+
+  var tema = (req.query.filtro_tema === 'ninguno')?"%":req.query.filtro_tema;
 	//Se modifica el string para que tenga los comodines %
 	search = '%' + search.replace(" ","%") + '%';
 
