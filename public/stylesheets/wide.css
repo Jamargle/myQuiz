@@ -24,6 +24,10 @@ nav span  {
 	text-align: left;
 }
 
+#body_layout {
+	width: 70%;
+}
+
 footer { 
 	clear: both;
 	display: block;

@@ -36,6 +36,7 @@ header, footer {
 	text-align: center;
 	color: rgba(255,255,255, 0.87);
 	background-color: #0288d1;
+	padding: 20px;
 }
 
 footer a {
