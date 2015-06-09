@@ -21,11 +21,12 @@ exports.load = function(req, res, next, quizId) {
 exports.index = function(req, res) {
 	//Si no hay búsqueda se asigna vacío
 	var search = req.query.search || "";
+  var tema = req.query.filtro_tema || "";
 	//Se modifica el string para que tenga los comodines %
 	search = '%' + search.replace(" ","%") + '%';
 
 	models.Quiz.findAll({
-		where: ['pregunta like ?', search],
+		where: ['pregunta like ? AND tema = ?', search, tema],
 		order: 'pregunta'
 	}).then(function(quizes) {
 		res.render('quizes/index', {quizes: quizes, errors: []});
