@@ -13,15 +13,19 @@ body {
 }
 
 section > div { 
-	padding: 20px; 
+	padding: 20px;
+	display: inline-block;
+  	vertical-align: top;
 }
 
 nav, section { 
 	background: #eee; 	
 }
 
-nav span             { margin: 0px 10px 0px 0px;
-  					   display: inline-block;}
+nav span { 
+	margin: 0px 10px 0px 0px;
+	display: block;
+}
 
 #ErrorMsgs           { color: #f61; font-size: smaler}
 .right 				 {float: right;}
@@ -32,6 +36,7 @@ header, footer {
 	text-align: center;
 	color: rgba(255,255,255, 0.87);
 	background-color: #0288d1;
+	padding: 20px;
 }
 
 footer a {

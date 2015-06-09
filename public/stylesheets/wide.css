@@ -9,7 +9,6 @@ body {
 
 nav { 
 	margin-left: 2%;
-	float: left;
 	width: 15%;
 	display: inline-block;
 	font-weight: 800;
@@ -18,10 +17,15 @@ nav {
 
 nav span  { 
 	margin: 20px 0px 0px 0px;
+	display: block;
 }
 
 #page-wrap #s1 h3, p, form { 
 	text-align: left;
+}
+
+#body_layout {
+	width: 70%;
 }
 
 footer { 
