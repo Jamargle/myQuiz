@@ -25,7 +25,7 @@ exports.index = function(req, res) {
 	search = '%' + search.replace(" ","%") + '%';
 
   //Si no se selecciona tema, se muestran todas las preguntas
-  if (req.query.filtro_tema === undefined) {
+  if ((req.query.filtro_tema === undefined) || (req.query.filtro_tema === 'ninguno')) {
     models.Quiz.findAll({
       where: ['pregunta like ?', search],
       order: 'pregunta'
