@@ -3,11 +3,11 @@
 	<th colspan="2">Estadísticas</th>
 </tr>
 <tr>
-	<td><font color=brown>&nbsp;Num. Preguntas&nbsp;</font></td>
+	<td><font color=brown>&nbsp;Número de Preguntas&nbsp;</font></td>
 	<td style="text-align:center">&nbsp;<%= statistics.num_quizes %>&nbsp;</td>
 </tr>
 <tr>
-	<td><font color=brown>&nbsp;Num. Comentarios&nbsp;</font></td>
+	<td><font color=brown>&nbsp;Número de Comentarios&nbsp;</font></td>
 	<td style="text-align:center">&nbsp;<%= statistics.num_comments %>&nbsp;
     <%if(statistics.num_with_comments_not_published){%>
 		<font color=red>(<%= statistics.num_with_comments_not_published %>)*&nbsp;</font>
@@ -18,14 +18,14 @@
 	<td style="text-align:center">&nbsp;<%= statistics.average %>&nbsp;</td>
 </tr>
 <tr>
-	<td><font color=brown>&nbsp;Num. Con comentarios&nbsp;</font></td>
+	<td><font color=brown>&nbsp;Preguntas Con comentarios&nbsp;</font></td>
 	<td style="text-align:center">&nbsp;<%= statistics.num_with_comments %>&nbsp;</td>
 </tr>
 <tr>
-	<td><font color=brown>&nbsp;Num. Sin comentarios&nbsp;</font></td>
+	<td><font color=brown>&nbsp;Preguntas Sin comentarios&nbsp;</font></td>
 	<td style="text-align:center">&nbsp;<%= statistics.num_without_comments %>&nbsp;</td>
 </tr>
 </table>
 <%if(statistics.num_with_comments_not_published){%>
-	<font color=red>&nbsp;* comentarios pendientes de publicar&nbsp;</font>
+	<font color=red>&nbsp;* hay comentarios pendientes de publicar&nbsp;</font>
 <%}%>
